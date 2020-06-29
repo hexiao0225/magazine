@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
   return (
-    <div className='app'>
+    <div className='app page'>
       <CoverPage />
       <MenuPage />
       <SamplePage />

@@ -1,4 +1,5 @@
 $pink: #eaaaaa;
+$red: #ff5a25;
 $orange: #ec5723;
 $greenishGrey: #cfd0c7;
 $brightYellow: #f7ba2e;
@@ -11,9 +12,15 @@ $mobile: "(min-width: 320px) and (max-width: 568px)";
 $tablet: "(min-width: 569px) and (max-width: 1025px)";
 $desktop: "(min-width: 1026px)";
 
+@font-face {
+  font-family: "Recoleta Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Recoleta Bold"), url("../media/Recoleta-Bold.woff") format("woff");
+}
+
 html,
-body,
-.app {
+body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -21,7 +28,136 @@ body,
 }
 
 .cover-page {
-  background: $brightYellow;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Recoleta Bold", sans-serif;
+  background: linear-gradient(rgba(233, 59, 7, 0.8), rgba(233, 59, 7, 0.8)),
+    url("https://image.freepik.com/free-photo/plastic-texture-background-abstract-crumpled-material-transparent-object-wrinkled_79161-433.jpg");
+
+  .dust {
+    background-image: url(../media/cover-dust.png);
+  }
+
+  .date {
+    top: 6.25vw;
+    left: 6.25vw;
+    color: #212121;
+    position: absolute;
+    font-family: "Noto Sans", sans-serif;
+    @media #{$tablet} {
+      top: 30vw;
+    }
+    @media #{$mobile} {
+      top: 40vw;
+    }
+
+    .day {
+      height: 4.271vw;
+      font-weight: 700;
+      font-size: 5.99vw;
+      font-family: inherit;
+      line-height: 4.271vw;
+      text-indent: -0.25vw;
+      letter-spacing: -0.4vw;
+    }
+    .month {
+      height: 1.823vw;
+      font-weight: 700;
+      font-size: 1.094vw;
+      font-family: inherit;
+      line-height: 1.823vw;
+      letter-spacing: -0.03vw;
+      text-transform: uppercase;
+    }
+    .year {
+      height: 0.781vw;
+      font-weight: 300;
+      font-size: 1.094vw;
+      font-family: inherit;
+      line-height: 0.781vw;
+      letter-spacing: -0.03vw;
+      text-transform: uppercase;
+    }
+  }
+  .leo-picture {
+    z-index: 1;
+    height: 100vh;
+    z-index: 1;
+    background-image: url("http://www.onceuponatimemag.com/img/cover-leo.48726174.png");
+    background-size: cover;
+    @media #{$tablet} {
+      bottom: 0;
+      background-image: url("http://www.onceuponatimemag.com/img/cover-leo-mobile.e2b5b4c7.png");
+    }
+    @media #{$mobile} {
+      bottom: 0;
+      background-image: url("http://www.onceuponatimemag.com/img/cover-leo-mobile.e2b5b4c7.png");
+    }
+  }
+  .wordmark {
+    top: 50%;
+    left: -1.302vw;
+    width: 102.604vw;
+    height: 24.01vw;
+    display: block;
+    position: absolute;
+    transform: translateY(-60%);
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url("http://www.onceuponatimemag.com/img/cover-logo.8ea5001f.svg");
+    @media #{$tablet} {
+      top: 12%;
+    }
+    @media #{$mobile} {
+      top: 12%;
+    }
+  }
+  .copy {
+    font-family: "Noto Sans", sans-serif;
+    left: 5.55vw;
+    bottom: 0;
+    z-index: 2;
+    color: ivory;
+    position: absolute;
+    pointer-events: none;
+
+    .subtitle {
+      font-weight: 700;
+      font-size: 5.99vw;
+      line-height: 4.9vw;
+      letter-spacing: -0.5vw;
+      text-transform: uppercase;
+    }
+  }
+}
+.social {
+  right: 3.646vw;
+  bottom: 8vw;
+  height: auto;
+  width: 2.083vw;
+  z-index: 10;
+  position: absolute;
+
+  .button {
+    position: relative;
+    margin-bottom: 0.521vw;
+    border-radius: 100%;
+    border: 1px solid #000;
+    width: 2.083vw;
+    height: 2.083vw;
+    display: block;
+
+    &:before {
+      width: 2.083vw;
+      height: 2.083vw;
+      display: block;
+    }
+    &:after,
+    &:hover {
+      background-color: black;
+    }
+  }
 }
 
 .menu-page {
