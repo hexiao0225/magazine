@@ -1,0 +1,33 @@
+$pink: #eaaaaa;
+$orange: #ec5723;
+$greenishGrey: #cfd0c7;
+$brightYellow: #f7ba2e;
+$black: #181818;
+$ivory: #f1f0eb;
+$wheat: #fcfaef;
+$darkestgrey: #222222;
+
+$mobile: "(min-width: 320px) and (max-width: 568px)";
+$tablet: "(min-width: 569px) and (max-width: 1025px)";
+$desktop: "(min-width: 1026px)";
+
+html,
+body,
+.app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cover-page {
+  background: $brightYellow;
+}
+
+.menu-page {
+  background: $pink;
+}
+
+.sample-page {
+  background: $greenishGrey;
+}
