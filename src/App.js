@@ -2,15 +2,17 @@ import React from "react";
 import "./styles/App.scss";
 import CoverPage from "./components/CoverPage/CoverPage";
 import MenuPage from "./components/MenuPage/MenuPage";
-import SamplePage from "./components/Page/SamplePage";
+import Letter from "./components/Page/Letter";
+import Rise from "./components/Page/Rise";
 import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
   return (
-    <div className='app page'>
+    <div className='app'>
       <CoverPage />
       <MenuPage />
-      <SamplePage />
+      <Letter />
+      <Rise />
     </div>
   );
 };

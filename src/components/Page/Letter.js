@@ -5,9 +5,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const SamplePage = () => {
+const Letter = () => {
   return (
-  <Container fluid className='letter'>
+  <Container fluid className='letter page'>
     <Row>
       <Logo/>
     </Row>
@@ -19,7 +19,6 @@ const SamplePage = () => {
     </Row>
     <Row>
       <div className="portrait">
-        <img data-animate="scale-up" src="http://www.onceuponatimemag.com/img/letter-portrait-quentin.756faba1.png" alt="Portrait from the Editor"></img>
       </div>
     </Row>
     <Row>
@@ -35,4 +34,4 @@ const SamplePage = () => {
   );
 };
 
-export default SamplePage;
+export default Letter;

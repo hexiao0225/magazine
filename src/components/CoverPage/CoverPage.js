@@ -11,7 +11,7 @@ const CoverPage = () => {
       <div className='leo-picture'></div>
       <div className='copy'>
         <h1 className='subtitle'>
-          Rise of<br></br>a Leading<br></br>Man
+          Rise of<br></br>a Visual<br></br>Culture
         </h1>
       </div>
       <Socials />

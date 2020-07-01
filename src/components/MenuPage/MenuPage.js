@@ -5,6 +5,7 @@ import Date from "../Information/Date";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Calendar from './Calendar'
 
 const MenuPage = () => {
   return (
@@ -14,7 +15,7 @@ const MenuPage = () => {
       </Row>
       <Row>
         <h1 className='heading'>
-          Rise of<br></br>a Leading<br></br>Man
+          Rise of<br></br>a Visual<br></br>Culture
         </h1>
       </Row>
       <Row>
@@ -31,7 +32,7 @@ const MenuPage = () => {
           </p>
         </Col>
       </Row>
-      <div className='content'>
+      {/* <div className='content'>
         <Row
           onMouseEnter={() => {
             console.log("entered letter from editor");
@@ -64,7 +65,14 @@ const MenuPage = () => {
             §2
           </Col>
         </Row>
-      </div>
+      </div> */}
+      {/* <Row>
+        <h3 className="chinese-title">國民畫中</h3>
+        <h1 className="chinese-title">書歷年九十</h1>
+      </Row> */}
+      <Row className="calendar">
+          <Calendar/>
+      </Row>
     </Container>
   );
 };

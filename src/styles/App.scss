@@ -2,12 +2,14 @@ $pink: #eaaaaa;
 $red: #ff5a25;
 $orange: #ec5723;
 $greenishGrey: #cfd0c7;
+$yellowishGrey: #ece3c7;
 $brightYellow: #f7ba2e;
 $black: #181818;
 $ivory: #f1f0eb;
 $wheat: #fcfaef;
 $darkestgrey: #222222;
 $ink: #30312f;
+$rose: #e65c66;
 
 $mobile: "(min-width: 320px) and (max-width: 568px)";
 $tablet: "(min-width: 569px) and (max-width: 1025px)";
@@ -31,6 +33,16 @@ body {
 // public
 p {
   font-family: "Vidaloka", serif;
+}
+
+.small-text {
+  font-size: 3vw;
+  line-height: 3vw;
+}
+
+.chinese-title {
+  font-family: "Noto Sans HK", sans-serif;
+  font-weight: 400;
 }
 .social {
   right: 3.646vw;
@@ -154,16 +166,16 @@ p {
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-image: url(/static/media/shanghai-beer-figure.0f5a2625.png);
+    background-image: url("../media/shanghai-beer-figure.png");
     background-size: cover;
 
     @media #{$tablet} {
       bottom: 0;
-      background-image: url("http://www.onceuponatimemag.com/img/cover-leo-mobile.e2b5b4c7.png");
+      background-image: url("../media/shanghai-beer-figure.png");
     }
     @media #{$mobile} {
       bottom: 0;
-      background-image: url("http://www.onceuponatimemag.com/img/cover-leo-mobile.e2b5b4c7.png");
+      background-image: url("../media/shanghai-beer-figure.png");
     }
   }
   .wordmark {
@@ -251,37 +263,92 @@ p {
       text-align: right;
     }
   }
+
+  .calendar {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 300;
+    margin-left: 6.25vw;
+    margin-right: 6.25vw;
+    padding-bottom: 10vw;
+    .table td {
+      border: 2px solid black;
+      max-width: 12vw;
+      min-width: 12vw;
+      height: 12vw;
+
+      .calendar-item {
+        font-weight: 500;
+        font-size: 2.5vw;
+        line-height: 2.2vw;
+        letter-spacing: -0.195vw;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 
-.letter {
-  background: $greenishGrey;
+.page {
   .chapter {
     margin: auto;
     text-align: center;
-    color: $orange;
   }
   .heading {
     margin: auto;
-    color: $orange;
     text-align: center;
-  }
-  .portrait {
-    width: 62.5vw;
-    height: 89.583vw;
-    z-index: 2;
-    position: relative;
-    margin: -10vw auto 0;
-    pointer-events: none;
-    img {
-      width: 100%;
-    }
+    z-index: 1;
   }
   .text {
-    margin-top: -10vw;
     margin-left: 6.25vw;
     padding-bottom: 10vw;
     font-size: 2.292vw;
     line-height: 2.7vw;
     font-family: "Noto Sans", sans-serif;
+  }
+  .portrait {
+    width: 60vw;
+    height: 90vw;
+    z-index: 0;
+    position: relative;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .horizontal {
+    width: 100%;
+    height: 30vw;
+    z-index: 0;
+    position: relative;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.letter {
+  background: $yellowishGrey;
+  .chapter {
+    color: $rose;
+  }
+  .heading {
+    color: $rose;
+  }
+  .portrait {
+    margin: -10vw auto 0;
+    background-image: url("../media/man-tuo.jpg");
+  }
+  .text {
+    margin-top: -10vw;
+  }
+}
+
+.rise {
+  background: $brightYellow;
+  .portrait {
+    margin: -10vw auto 0;
+    background-image: url("../media/chang-wei-yao.jpg");
+  }
+  .horizontal {
+    margin: -10vw 6vw 6vw 6vw;
+    background-image: url("../media/city.jpg");
   }
 }
