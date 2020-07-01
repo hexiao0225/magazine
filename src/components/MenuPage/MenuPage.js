@@ -1,5 +1,7 @@
 import React from "react";
 import { MENU_TITLE } from "../../constants/text";
+import Logo from "../Information/Logo";
+import Date from "../Information/Date";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -7,34 +9,62 @@ import Col from "react-bootstrap/Col";
 const MenuPage = () => {
   return (
     <Container fluid className='menu-page'>
-      {/* Stack the columns on mobile by making one full-width and the other half-width */}
       <Row>
-        <Col xs={12} md={8}>
-          xs=12 md=8 {MENU_TITLE}
+        <Logo />
+      </Row>
+      <Row>
+        <h1 className='heading'>
+          Rise of<br></br>a Leading<br></br>Man
+        </h1>
+      </Row>
+      <Row>
+        <Col xs={4} md={4} lg={6}>
+          <Date />
         </Col>
-        <Col xs={6} md={4}>
-          xs=6 md=4
+        <Col xs={8} md={8} lg={6}>
+          <p className='intro In-View'>
+            Is television the new fast track to movie stardom? More and more
+            actors and actresses are using their popularity on the small screen
+            as a stepping stone to big Hollywood feature films. This issue’s
+            feature article dives into Bounty Law start Rick Dalton’s attempt to
+            shake his reputation as small screen start and finally make it big.
+          </p>
         </Col>
       </Row>
+      <div className='content'>
+        <Row
+          onMouseEnter={() => {
+            console.log("entered letter from editor");
+          }}
+          onMouseLeave={() => {}}
+        >
+          <Col xs={6} md={6} lg={6}>
+            <h3 className='title'>
+              Letter From<br></br>the Editor
+            </h3>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            Welcome
+          </Col>
+          <Col xs={2} md={3} lg={3}>
+            §1
+          </Col>
+        </Row>
 
-      {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
-      <Row>
-        <Col xs={6} md={4}>
-          xs=6 md=4
-        </Col>
-        <Col xs={6} md={4}>
-          xs=6 md=4
-        </Col>
-        <Col xs={6} md={4}>
-          xs=6 md=4
-        </Col>
-      </Row>
-
-      {/* Columns are always 50% wide, on mobile and desktop */}
-      <Row>
-        <Col xs={6}>xs=6</Col>
-        <Col xs={6}>xs=6</Col>
-      </Row>
+        <Row>
+          <Col xs={6} md={6} lg={6}>
+            <h3 className='title'>
+              Rick Dalton:<br></br> Rise of a Leading Man
+            </h3>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            Making the jump from TV star to Hollywood Hero
+          </Col>
+          <Col xs={2} md={3} lg={3}>
+            §2
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };

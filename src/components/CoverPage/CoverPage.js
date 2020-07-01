@@ -1,17 +1,13 @@
 import React from "react";
-import Socials from "./Socials";
+import Socials from "../Information/Socials";
+import Date from "../Information/Date";
 
 const CoverPage = () => {
   return (
     <div className='cover-page'>
       <div className='wordmark'></div>
       <div className='dust'></div>
-      <div className='date'>
-        <div className='day'>26</div>
-        <div className='month'>Of July</div>
-        <div className='year'>1969 Issue</div>
-      </div>
-
+      <Date/>
       <div className='leo-picture'></div>
       <div className='copy'>
         <h1 className='subtitle'>
