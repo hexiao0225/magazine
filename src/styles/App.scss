@@ -10,6 +10,9 @@ $wheat: #fcfaef;
 $darkestgrey: #222222;
 $ink: #30312f;
 $rose: #e65c66;
+$dark-red: #a34532;
+$paperYellow: #ece5d3;
+$darkGreen: #50573a;
 
 $mobile: "(min-width: 320px) and (max-width: 568px)";
 $tablet: "(min-width: 569px) and (max-width: 1025px)";
@@ -30,16 +33,6 @@ body {
   padding: 0;
 }
 
-// public
-p {
-  font-family: "Vidaloka", serif;
-}
-
-.small-text {
-  font-size: 3vw;
-  line-height: 3vw;
-}
-
 .chinese-title {
   font-family: "Noto Sans HK", sans-serif;
   font-weight: 400;
@@ -51,6 +44,12 @@ p {
   width: 2.083vw;
   z-index: 10;
   position: absolute;
+  @media #{$tablet} {
+    display: none;
+  }
+  @media #{$mobile} {
+    display: none;
+  }
 
   .button {
     position: relative;
@@ -71,6 +70,10 @@ p {
       background-color: black;
     }
   }
+}
+.table-responsive {
+  width: 98vw;
+  overflow-x: none;
 }
 
 .header {
@@ -95,7 +98,7 @@ p {
   left: 6.25vw;
   color: $ink;
   position: absolute;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Recoleta Bold", sans-serif;
   @media #{$tablet} {
     top: 30vw;
   }
@@ -104,27 +107,27 @@ p {
   }
 
   .day {
-    height: 4.271vw;
+    height: 4.3vw;
     font-weight: 700;
-    font-size: 5.99vw;
+    font-size: 7vw;
     font-family: inherit;
-    line-height: 4.271vw;
+    line-height: 4.5vw;
     text-indent: -0.25vw;
     letter-spacing: -0.4vw;
   }
   .month {
     height: 1.823vw;
     font-weight: 700;
-    font-size: 1.094vw;
+    font-size: 1.8vw;
     font-family: inherit;
-    line-height: 1.823vw;
+    line-height: 2vw;
     letter-spacing: -0.03vw;
     text-transform: uppercase;
   }
   .year {
-    height: 0.781vw;
+    height: 1vw;
     font-weight: 300;
-    font-size: 1.094vw;
+    font-size: 1.4vw;
     font-family: inherit;
     line-height: 0.781vw;
     letter-spacing: -0.03vw;
@@ -145,9 +148,12 @@ p {
   font-weight: 700;
   font-size: 5.885vw;
   line-height: 5.469vw;
-  margin-bottom: 3.125vw;
+  padding-bottom: 5vw;
   font-family: "Recoleta Bold";
   letter-spacing: -0.1vw;
+}
+.italic {
+  font-style: italic;
 }
 
 .cover-page {
@@ -229,7 +235,7 @@ p {
     color: $black;
   }
   .intro {
-    padding-bottom: 10vw;
+    padding-bottom: 5vw;
     font-size: 2.292vw;
     line-height: 2.7vw;
     margin-right: 6.25vw;
@@ -298,20 +304,38 @@ p {
     z-index: 1;
   }
   .text {
+    max-width: 60vw;
     margin-left: 6.25vw;
-    padding-bottom: 10vw;
+    padding-bottom: 5vw;
     font-size: 2.292vw;
     line-height: 2.7vw;
     font-family: "Noto Sans", sans-serif;
   }
+  .small-text {
+    max-width: 60vw;
+    margin-left: 6.25vw;
+    padding-bottom: 5vw;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    font-family: "Noto Sans", sans-serif;
+  }
   .portrait {
     width: 60vw;
-    height: 90vw;
+    height: 80vw;
     z-index: 0;
     position: relative;
     pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+  .caption {
+    top: -80vw;
+    height: 2.083vw;
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    transform-origin: center top;
+    transform: rotate(-90deg) translateY(-50%);
   }
   .horizontal {
     width: 100%;
@@ -321,6 +345,46 @@ p {
     pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+  .quote {
+    font-weight: 700;
+    font-size: 4.375vw;
+    font-family: "Recoleta Bold";
+    text-align: center;
+    line-height: 5.208vw;
+    letter-spacing: -0.044vw;
+    margin: auto;
+    width: 60vw;
+    padding: 5vw 0;
+  }
+  .quotee {
+    position: relative;
+    line-height: 1.094vw;
+    padding-left: 4.688vw;
+    padding-bottom: 5vw;
+    margin: 0 auto 0 52.865vw;
+    font-weight: 300;
+    font-size: 1.094vw;
+    letter-spacing: -0.011vw;
+    font-family: "Noto Sans", sans-serif;
+    text-transform: uppercase;
+    &:before {
+      top: 10%;
+      left: 0;
+      width: 4.167vw;
+      height: 0.781vw;
+      content: "";
+      position: absolute;
+      transform: translateY(-50%);
+      background-size: 100%;
+      background-position: 50%;
+      background-repeat: repeat-x;
+      background-color: linear-gradient(
+        rgba(233, 59, 7, 0.8),
+        rgba(233, 59, 7, 0.8)
+      );
+      background-image: url(../media/icon-quote.svg);
+    }
   }
 }
 
@@ -342,13 +406,65 @@ p {
 }
 
 .rise {
-  background: $brightYellow;
+  background: $dark-red;
+  color: $paperYellow;
+  .chapter {
+    padding-bottom: 8vw;
+  }
+  .heading {
+    margin-bottom: 10vw;
+  }
+  .small-text {
+    padding-bottom: 0;
+    margin-bottom: 5vw;
+  }
   .portrait {
-    margin: -10vw auto 0;
+    @media #{$desktop} {
+      margin: -10vw auto 0;
+    }
+    margin: auto;
     background-image: url("../media/chang-wei-yao.jpg");
   }
+
   .horizontal {
-    margin: -10vw 6vw 6vw 6vw;
+    width: 40vw;
+    height: 25vw;
+    overflow: hidden;
+    pointer-events: none;
+    margin-left: 4.167vw;
+    margin-top: -4.167vw;
     background-image: url("../media/city.jpg");
+  }
+  .san-mao {
+    margin: auto;
+    background-image: url("../media/san-mao.jpg");
+  }
+  .move-up {
+    @media #{$desktop} {
+      margin-top: -20vw;
+    }
+    margin-right: 1vw;
+    margin-bottom: 3.125vw;
+  }
+}
+.drawing {
+  background: $paperYellow;
+  color: $ink;
+  .advertisement {
+    margin: auto;
+    margin-top: 10vw;
+    background-image: url("../media/dian-ji.jpg");
+  }
+}
+
+.ad {
+  background-color: $darkGreen;
+  color: $greenishGrey;
+  .portrait {
+    width: 90vw;
+    height: 130vw;
+    margin: 5vw 5vw;
+    background-size: cover;
+    background-image: url("../media/earth.jpg");
   }
 }

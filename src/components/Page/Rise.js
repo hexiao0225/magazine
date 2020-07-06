@@ -19,7 +19,7 @@ const Rise = () => {
     </Row>
     <Row>
     <Col xs={8} md={8} lg={6}>
-        <p className="text">
+        <p className="small-text">
         These pages step back into 1969, the year Easy Rider and The Wild Bunch were released, the year of Woodstock and the moon landing, a year of peace, love, tragedy.
         </p>
       </Col>
@@ -28,16 +28,16 @@ const Rise = () => {
     </Row>
     <Row>
       <Col xs={8} md={8} lg={6}>
-        <h3 className="text">
+        <p className="text">
         These pages step back into 1969, the year Easy Rider and The Wild Bunch were released, the year of Woodstock and the moon landing, a year of peace, love, tragedy, and war. Before you experience Once Upon a Time In … Hollywood, take the time to immerse yourself in Rick Dalton’s world. Enjoy. 
-        </h3>
+        </p>
       </Col>
       <Col xs={4} md={4} lg={6}>
       </Col>
     </Row>
     <Row>
-      <Col xs={10} md={10} lg={4}></Col>
-      <Col xs={2} md={2} lg={8}>
+      <Col xs={0} md={0} lg={4}></Col>
+      <Col xs={12} md={12} lg={8}>
           <div className="portrait"></div>
       </Col>
     </Row>
@@ -46,6 +46,14 @@ const Rise = () => {
         <div className="horizontal"></div>
       </Col>
       <Col xs={2} md={4} lg={6}>
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={2} md={2} lg={6}>
+      </Col>
+      <Col xs={10} md={10} lg={6}>
+          <p className="text move-up">These pages step back into 1969, the year Easy Rider and The Wild Bunch were released, the year of Woodstock and the moon landing, a year of peace, love, tragedy, and war. Before you experience Once Upon a Time In … Hollywood, take the time to immerse yourself in Rick Dalton’s world. Enjoy. </p>
+          <p className="small-text">These pages step back into 1969, the year Easy Rider and The Wild Bunch were released, the year of Wss</p>
       </Col>
     </Row>
   </Container>
